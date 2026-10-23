@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slow Inbox — a free monthly letter about calmer email habits</title>
+<meta name="description" content="Slow Inbox is a free, independent monthly letter with small, practical habits for spending less time in your inbox.">
+
+<!-- ChatGPT Ads Measurement Pixel (official snippet; init happens below once a Pixel ID is set) -->
+<script>
+  (function (w, d, s, u) {
+    if (w.oaiq) return;
+    var q = function () { q.q.push(arguments); };
+    q.q = [];
+    w.oaiq = q;
+    var js = d.createElement(s);
+    js.async = true;
+    js.src = u;
+    var f = d.getElementsByTagName(s)[0];
+    f.parentNode.insertBefore(js, f);
+  })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+</script>
+
+<style>
+  :root { --bg: #f7f5f0; --surface: #ffffff; --ink: #1e1d1a; --muted: #6a665e; --line: #e4dfd5; --accent: #3a5a78; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 Georgia, "Times New Roman", serif; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 28px 0 0; font: 600 15px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+  .hero { padding: 56px 0 24px; }
+  h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 0 0 18px; font-weight: 600; }
+  .lead { font-size: 19px; color: var(--muted); margin: 0 0 8px; }
+  h2 { font-size: 24px; margin: 40px 0 12px; font-weight: 600; }
+  ol.tips { padding-left: 22px; margin: 0; }
+  ol.tips li { margin-bottom: 14px; }
+  ol.tips b { font-weight: 600; }
+  .ui, button, input, select, label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+  .link { background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; cursor: pointer; font: inherit; font-size: 16px; }
+  .box { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; margin: 36px 0; }
+  .box h2 { margin-top: 0; }
+  .box p { color: var(--muted); margin: 0 0 16px; font-size: 16px; }
+  .field { margin-bottom: 12px; }
+  label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  input, select { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 16px; background: #fff; color: var(--ink); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .check { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; color: var(--muted); }
+  .check input { width: auto; margin-top: 4px; }
+  .btn { display: inline-block; border: 0; background: var(--accent); color: #fff; padding: 12px 20px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+  .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  .btn.small { padding: 7px 12px; font-size: 14px; }
+  .thanks { display: none; color: #2f6b3a; font-size: 16px; margin-top: 12px; }
+  footer { color: var(--muted); font-size: 14px; padding: 24px 0 120px; border-top: 1px solid var(--line); margin-top: 40px; }
+  @media (max-width: 520px) { .two { grid-template-columns: 1fr; } }
+
+  /* Test console — only visible with ?test=1 */
+  #console { display: none; background: #161614; color: #e9e6df; padding: 28px 0 40px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; font-size: 15px; }
+  #console .cw { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  #console h2 { color: #fff; margin: 0 0 6px; font-size: 22px; }
+  #console h3 { color: #fff; margin: 0 0 8px; font-size: 16px; }
+  #console p, #console label { color: #b9b4aa; font-size: 14px; }
+  .cgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 14px; }
+  .ccard { background: #1f1e1b; border: 1px solid #34322d; border-radius: 12px; padding: 16px; }
+  #console input { background: #11110f; color: #e9e6df; border-color: #3a3833; font-size: 14px; }
+  #console .btn { background: #3d7a68; }
+  #console .btn.ghost { background: transparent; color: #9fd3c2; border: 1px solid #4b7d6e; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .kv { display: grid; grid-template-columns: 130px 1fr; gap: 6px 10px; font-size: 14px; }
+  .kv div:nth-child(odd) { color: #8f8a80; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; word-break: break-all; }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .pill.ok { background: #20412a; color: #9be0ab; }
+  .pill.bad { background: #4a201a; color: #f2a497; }
+  .pill.warn { background: #45330f; color: #f3c879; }
+  pre { background: #11110f; border: 1px solid #34322d; border-radius: 8px; padding: 12px; overflow: auto; max-height: 340px; margin: 8px 0 0; font-size: 12.5px; line-height: 1.45; color: #e9e6df; }
+  #log .entry { border-bottom: 1px solid #2d2b27; padding: 8px 0; }
+  #log .entry:last-child { border-bottom: 0; }
+  #log .t { color: #8f8a80; font-size: 12px; }
+  @media (max-width: 520px) { .kv { grid-template-columns: 1fr; } }
+
+  #consentBar { position: fixed; left: 16px; right: 16px; bottom: 16px; max-width: 640px; margin: 0 auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.12); padding: 16px; display: none; z-index: 10; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+  #consentBar p { margin: 0 0 12px; font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>Slow Inbox</header>
+
+  <div class="hero">
+    <h1>Spend less time in your inbox, without missing what matters</h1>
+    <p class="lead">A free, independent letter. Once a month, one small email habit you can try in five minutes. No ads, no upsells.</p>
+  </div>
+
+  <h2>Three habits to start with</h2>
+  <ol class="tips">
+    <li><b>Check twice a day, not twenty times.</b> Pick two fixed slots and close the tab in between.</li>
+    <li><b>Unsubscribe from one list every morning.</b> In a month your inbox is noticeably quieter.</li>
+    <li><b>Answer in three sentences.</b> Short replies get faster answers back.</li>
+  </ol>
+  <p class="ui"><button class="link" data-event="contents_viewed" data-content="habits_guide" data-name="Full habits guide">Read the full guide</button></p>
+
+  <div class="box" id="subscribe">
+    <h2>Get the monthly letter</h2>
+    <p>One email a month. Unsubscribe any time.</p>
+    <form id="leadForm" autocomplete="off">
+      <div class="two">
+        <div class="field"><label for="fname">First name</label><input id="fname" name="first_name"></div>
+        <div class="field"><label for="lname">Last name</label><input id="lname" name="last_name"></div>
+      </div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      <div class="two">
+        <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone"></div>
+        <div class="field"><label for="country">Country</label>
+          <select id="country" name="country"><option>UA</option><option>RO</option><option>BR</option><option>MX</option><option>AR</option><option>US</option></select>
+        </div>
+      </div>
+      <input type="hidden" name="oppref" id="hiddenOppref">
+      <div class="field check"><input type="checkbox" id="adsConsent" checked><label for="adsConsent" style="margin:0">I agree that my contact details may be shared with ChatGPT Ads to measure ad performance.</label></div>
+      <button class="btn" type="submit">Subscribe</button>
+      <div class="thanks" id="thanks">Thanks — you're on the list.</div>
+    </form>
+  </div>
+
+  <footer>Slow Inbox is an independent page used for testing integrations. Nothing is sold here.</footer>
+</div>
+
+<!-- ===================== TEST CONSOLE (?test=1) ===================== -->
+<div id="console">
+  <div class="cw">
+    <h2>Тест-консоль ChatGPT Ads</h2>
+    <p>Видно тільки з ?test=1. Вводь тільки вигадані дані.</p>
+
+    <div class="cgrid">
+      <div class="ccard">
+        <h3>Pixel</h3>
+        <div class="kv">
+          <div>Pixel ID</div><div id="pidView" class="mono">—</div>
+          <div>Статус</div><div id="pidStatus"></div>
+          <div>Згода</div><div id="consentView"></div>
+        </div>
+        <div class="field" style="margin-top:12px"><label for="pidInput">Вставити Pixel ID</label><input id="pidInput" class="mono" placeholder="з вкладки Conversions в Ads Manager"></div>
+        <div class="row">
+          <button class="btn small" id="savePid">Зберегти і перезапустити</button>
+          <button class="btn small ghost" id="revoke">Відкликати згоду</button>
+        </div>
+      </div>
+
+      <div class="ccard">
+        <h3>Атрибуція</h3>
+        <div class="kv">
+          <div>oppref з URL</div><div id="opprefUrl" class="mono">—</div>
+          <div>cookie __oppref</div><div id="opprefCookie" class="mono">—</div>
+          <div>cookie __obref</div><div id="obrefCookie" class="mono">—</div>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <button class="btn small ghost" id="simClick">Симулювати клік</button>
+          <button class="btn small ghost" id="refresh">Оновити</button>
+        </div>
+        <p style="font-size:13px;margin-top:10px">Фейковий oppref — тільки щоб перевірити, що сторінка і форма його ловлять. Атрибуції з ним не буде.</p>
+      </div>
+
+      <div class="ccard">
+        <h3>Telegram deep link</h3>
+        <div class="field"><label for="botName">Username бота (без @)</label><input id="botName" class="mono" placeholder="my_test_bot"></div>
+        <div id="tgResult" class="kv"></div>
+      </div>
+    </div>
+
+    <div class="ccard" style="margin-top:14px">
+      <h3>Будь-яка подія Pixel</h3>
+      <p>Для тесту всіх типів подій, навіть тих, яких на сторінці немає. Кожна має event_id і готовий JSON для CAPI з тим самим id.</p>
+      <div class="row" id="evbtns"></div>
+    </div>
+
+    <div class="cgrid">
+      <div class="ccard">
+        <h3>Що піде в SendPulse (остання підписка)</h3>
+        <pre id="spPayload" class="mono">Заповни форму підписки.</pre>
+        <div class="field" style="margin-top:12px"><label for="hook">Webhook URL (необов'язково) — сюди піде POST з цим JSON</label><input id="hook" class="mono" placeholder="https://..."></div>
+      </div>
+      <div class="ccard">
+        <h3>JSON для Conversions API (остання подія)</h3>
+        <pre id="capiPayload" class="mono">Натисни будь-яку подію.</pre>
+        <p style="font-size:13px;margin-top:8px">POST https://bzr.openai.com/v1/events?pid=&lt;PIXEL-ID&gt; з CAPI-ключем. "validate_only": true — перевірка без збереження.</p>
+      </div>
+    </div>
+
+    <div class="ccard" style="margin-top:14px">
+      <h3>Лог</h3>
+      <div id="log"><span class="t">Поки порожньо.</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="consentBar">
+  <p>This page uses a measurement pixel from ChatGPT Ads to understand which ads bring visitors. Allow measurement?</p>
+  <div class="row"><button class="btn small" id="cAccept">Allow</button><button class="btn small ghost" id="cDeny">Decline</button></div>
+</div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function lsDel(k) { try { localStorage.removeItem(k); } catch (e) {} }
+  function getCookie(name) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/[.$?*|{}()\[\]\\\/+^]/g, '\\$&') + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function pill(cls, text) { return '<span class="pill ' + cls + '">' + esc(text) + '</span>'; }
+
+  // ---------- state
+  var params = new URLSearchParams(location.search);
+  if (params.get('pid')) lsSet('oai_pid', params.get('pid').trim());
+  if (params.get('test') === '1') document.getElementById('console').style.display = 'block';
+  var state = { pid: lsGet('oai_pid'), consent: lsGet('oai_consent'), user: null };
+  var opprefUrl = params.get('oppref');
+
+  // ---------- hashing (OpenAI Ads normalization rules)
+  function hex(buf) { return Array.prototype.map.call(new Uint8Array(buf), function (x) { return x.toString(16).padStart(2, '0'); }).join(''); }
+  function sha256(s) { return crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)).then(hex); }
+  function normEmail(s) { return s.trim().toLowerCase(); }
+  function normPhone(s) { var d = s.replace(/[\s().\-]/g, '').replace(/^\+/, '').replace(/^0+/, ''); return /^\d{8,15}$/.test(d) ? d : null; }
+  function normName(s) { return s.toLowerCase().replace(/\s+/g, '').replace(/[!-\/:-@\[-`{-~]/g, ''); }
+
+  // ---------- log
+  var logEntries = [];
+  function log(title, obj, status) {
+    logEntries.unshift({ t: new Date().toLocaleTimeString(), title: title, obj: obj, status: status || 'ok' });
+    $('log').innerHTML = logEntries.slice(0, 40).map(function (e) {
+      return '<div class="entry"><span class="t">' + e.t + '</span> ' + pill(e.status, e.status === 'ok' ? 'sent' : (e.status === 'warn' ? 'not sent' : 'error')) + ' <b>' + esc(e.title) + '</b>' +
+        (e.obj ? '<pre class="mono">' + esc(JSON.stringify(e.obj, null, 2)) + '</pre>' : '') + '</div>';
+    }).join('');
+  }
+
+  // ---------- pixel
+  function initPixel() {
+    if (state.consent !== 'granted') oaiq('consent', false);
+    if (!state.pid) { renderPixel(); return; }
+    var cfg = { pixelId: state.pid, debug: params.get('test') === '1' };
+    if (state.user) cfg.user = state.user;
+    oaiq('init', cfg);
+    log('oaiq("init")', cfg, 'ok');
+    renderPixel();
+  }
+  function renderPixel() {
+    $('pidView').textContent = state.pid || '—';
+    $('pidStatus').innerHTML = state.pid ? pill('ok', 'ініціалізовано') : pill('warn', 'немає Pixel ID — події тільки в лозі');
+    $('consentView').innerHTML = state.consent === 'granted' ? pill('ok', 'дозволено') : (state.consent === 'denied' ? pill('bad', 'відхилено') : pill('warn', 'ще не обрано'));
+    $('consentBar').style.display = state.consent ? 'none' : 'block';
+  }
+
+  // ---------- attribution
+  function currentOppref() { return opprefUrl || getCookie('__oppref'); }
+  function renderAttribution() {
+    $('opprefUrl').textContent = opprefUrl || '—';
+    $('opprefCookie').textContent = getCookie('__oppref') || '—';
+    $('obrefCookie').textContent = getCookie('__obref') || '—';
+    $('hiddenOppref').value = currentOppref() || '';
+    renderTelegram();
+  }
+  function renderTelegram() {
+    var o = currentOppref();
+    var bot = ($('botName').value || 'your_bot').replace(/^@/, '').trim();
+    if (!o) { $('tgResult').innerHTML = '<div>oppref</div><div>немає — спершу клік або симуляція</div>'; return; }
+    var fitsLen = o.length <= 64, fitsChars = /^[A-Za-z0-9_-]+$/.test(o);
+    sha256(o).then(function (h) {
+      var token = 'sp_' + h.slice(0, 12);
+      $('tgResult').innerHTML =
+        '<div>Довжина</div><div>' + o.length + ' ' + (fitsLen ? pill('ok', '≤ 64') : pill('bad', '> 64')) + '</div>' +
+        '<div>Символи</div><div>' + (fitsChars ? pill('ok', 'A–Z a–z 0–9 _ -') : pill('bad', 'є недопустимі')) + '</div>' +
+        '<div>Прямий лінк</div><div class="mono">' + (fitsLen && fitsChars ? esc('https://t.me/' + bot + '?start=' + o) : 'не підходить — потрібен токен') + '</div>' +
+        '<div>Через токен</div><div class="mono">' + esc('https://t.me/' + bot + '?start=' + token) + '<br><span style="color:#8f8a80">мапу ' + token + ' → oppref треба зберігати на бекенді</span></div>';
+    });
+  }
+
+  // ---------- events
+  var ITEM = { id: 'test_item', name: 'Test item', price: 1000 };
+  var EVENTS = {
+    page_viewed:            function () { return { type: 'contents', contents: [{ id: 'home', name: 'Slow Inbox home', content_type: 'page' }] }; },
+    contents_viewed:        function (c) { return { type: 'contents', contents: [{ id: c.id || 'habits_guide', name: c.name || 'Full habits guide', content_type: 'page' }] }; },
+    lead_created:           function () { return { type: 'customer_action' }; },
+    registration_completed: function () { return { type: 'customer_action' }; },
+    appointment_scheduled:  function () { return { type: 'customer_action' }; },
+    items_added:            function () { return { type: 'contents', amount: ITEM.price, currency: 'USD', contents: [{ id: ITEM.id, name: ITEM.name, content_type: 'product', quantity: 1, amount: ITEM.price, currency: 'USD' }] }; },
+    checkout_started:       function () { return { type: 'contents', amount: ITEM.price, currency: 'USD', contents: [{ id: ITEM.id, name: ITEM.name, content_type: 'product', quantity: 1 }] }; },
+    order_created:          function () { return { type: 'contents', amount: ITEM.price, currency: 'USD', contents: [{ id: ITEM.id, name: ITEM.name, content_type: 'product', quantity: 1 }] }; },
+    subscription_created:   function () { return { type: 'plan_enrollment', plan_id: 'test_plan', amount: 500, currency: 'USD' }; },
+    trial_started:          function () { return { type: 'plan_enrollment', plan_id: 'test_trial' }; },
+    custom:                 function () { return { type: 'custom' }; }
+  };
+  function eventId(name) { return 'evt_' + name + '_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+
+  function track(name, ctx) {
+    ctx = ctx || {};
+    var data = EVENTS[name](ctx);
+    var opts = { event_id: eventId(ctx.custom || name) };
+    if (name === 'custom') opts.custom_event_name = ctx.custom || 'test_custom';
+    oaiq('measure', name, data, opts);
+    log('oaiq("measure", "' + name + (opts.custom_event_name ? ':' + opts.custom_event_name : '') + '")', { data: data, options: opts }, state.pid && state.consent === 'granted' ? 'ok' : 'warn');
+    buildCapi(name, opts.event_id, data, opts.custom_event_name);
+    return opts.event_id;
+  }
+
+  function buildCapi(name, id, data, customName) {
+    var ev = { id: id, type: name, timestamp_ms: Date.now(), source_url: location.origin + location.pathname, action_source: 'web', user: { user_agent: navigator.userAgent }, data: data };
+    if (customName) ev.custom_event_name = customName;
+    var o = currentOppref(); if (o) ev.oppref = o;
+    var ob = getCookie('__obref'); if (ob) ev.user.obref = ob;
+    var u = state.user || {};
+    if (u.email_sha256) ev.user.emails_sha256 = [u.email_sha256];
+    if (u.phone_number_sha256) ev.user.phone_numbers_sha256 = [u.phone_number_sha256];
+    if (u.first_name_sha256) ev.user.first_names_sha256 = [u.first_name_sha256];
+    if (u.last_name_sha256) ev.user.last_names_sha256 = [u.last_name_sha256];
+    if (u.country) ev.user.countries = [u.country];
+    $('capiPayload').textContent = JSON.stringify({ integration_source: 'sendpulse', validate_only: true, events: [ev] }, null, 2);
+  }
+
+  document.querySelectorAll('[data-event]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      track(btn.dataset.event, { id: btn.dataset.content, name: btn.dataset.name, custom: btn.dataset.custom });
+    });
+  });
+  Object.keys(EVENTS).forEach(function (name) {
+    var b = document.createElement('button');
+    b.className = 'btn small ghost';
+    b.textContent = name;
+    b.addEventListener('click', function () { track(name); });
+    $('evbtns').appendChild(b);
+  });
+
+  // ---------- subscribe form
+  $('leadForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target;
+    var email = normEmail(f.email.value);
+    var phone = f.phone.value ? normPhone(f.phone.value) : null;
+    var fn = f.first_name.value ? normName(f.first_name.value) : null;
+    var ln = f.last_name.value ? normName(f.last_name.value) : null;
+    var country = f.country.value;
+    var adsConsent = $('adsConsent').checked;
+    if (f.phone.value && !phone) log('Телефон не пройшов нормалізацію (треба 8–15 цифр з кодом країни)', { input: f.phone.value }, 'bad');
+
+    Promise.all([sha256(email), phone ? sha256(phone) : null, fn ? sha256(fn) : null, ln ? sha256(ln) : null]).then(function (h) {
+      var user = { email_sha256: h[0], country: country };
+      if (h[1]) user.phone_number_sha256 = h[1];
+      if (h[2]) user.first_name_sha256 = h[2];
+      if (h[3]) user.last_name_sha256 = h[3];
+      state.user = adsConsent ? user : null;
+      if (adsConsent && state.pid) { oaiq('init', { pixelId: state.pid, user: user }); log('oaiq("init") з user після форми', { user: user }, 'ok'); }
+      var leadId = adsConsent ? track('lead_created') : null;
+      if (!adsConsent) log('lead_created не відправлено: немає згоди на ChatGPT Ads', null, 'warn');
+
+      var payload = {
+        email: f.email.value.trim(),
+        phone: f.phone.value.trim() || null,
+        variables: {
+          name: f.first_name.value.trim() || null,
+          last_name: f.last_name.value.trim() || null,
+          country: country,
+          chatgpt_ads_oppref: currentOppref(),
+          chatgpt_ads_obref: getCookie('__obref'),
+          chatgpt_ads_consent: adsConsent,
+          chatgpt_ads_lead_event_id: leadId,
+          landing_url: location.href
+        }
+      };
+      $('spPayload').textContent = JSON.stringify(payload, null, 2);
+      $('thanks').style.display = 'block';
+      var hook = $('hook').value.trim();
+      if (hook) {
+        fetch(hook, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) })
+          .then(function () { log('Webhook POST відправлено', { url: hook }, 'ok'); })
+          .catch(function (err) { log('Webhook POST помилка', { error: String(err) }, 'bad'); });
+      }
+    });
+  });
+
+  // ---------- consent
+  $('cAccept').addEventListener('click', function () { state.consent = 'granted'; lsSet('oai_consent', 'granted'); oaiq('consent', true); log('oaiq("consent", true)', null, 'ok'); renderPixel(); track('page_viewed'); setTimeout(renderAttribution, 800); });
+  $('cDeny').addEventListener('click', function () { state.consent = 'denied'; lsSet('oai_consent', 'denied'); oaiq('consent', false); log('oaiq("consent", false)', null, 'ok'); renderPixel(); });
+  $('revoke').addEventListener('click', function () { state.consent = 'denied'; lsSet('oai_consent', 'denied'); oaiq('consent', false); log('oaiq("consent", false) — cookies видалено', null, 'ok'); renderPixel(); setTimeout(renderAttribution, 300); });
+
+  // ---------- console controls
+  $('savePid').addEventListener('click', function () {
+    var v = $('pidInput').value.trim();
+    if (v) lsSet('oai_pid', v); else lsDel('oai_pid');
+    location.href = location.pathname + '?test=1';
+  });
+  $('simClick').addEventListener('click', function () {
+    location.href = location.pathname + '?test=1&oppref=test_' + Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
+  });
+  $('refresh').addEventListener('click', renderAttribution);
+  $('botName').addEventListener('input', renderTelegram);
+
+  // ---------- go
+  initPixel();
+  if (state.consent === 'granted') track('page_viewed');
+  renderAttribution();
+  setTimeout(renderAttribution, 1500);
+})();
+</script>
+</body>
+</html>
