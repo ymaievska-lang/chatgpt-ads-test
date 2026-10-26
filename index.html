@@ -214,7 +214,8 @@
   var params = new URLSearchParams(location.search);
   if (params.get('pid')) lsSet('oai_pid', params.get('pid').trim());
   if (params.get('test') === '1') document.getElementById('console').style.display = 'block';
-  var state = { pid: lsGet('oai_pid'), consent: lsGet('oai_consent'), user: null };
+  var DEFAULT_PID = 'HM133iKmXqYztTTMQezdka';
+  var state = { pid: lsGet('oai_pid') || DEFAULT_PID, consent: lsGet('oai_consent'), user: null };
   var opprefUrl = params.get('oppref');
 
   // ---------- hashing (OpenAI Ads normalization rules)
